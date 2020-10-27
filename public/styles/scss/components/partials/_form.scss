@@ -1,0 +1,40 @@
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .form-group {
+        width: 100%;
+
+        .form-control, .form-label {
+            font-size: 2rem;
+        }
+
+        .form-label {
+            color: $baseFontColor;
+        }
+
+        .feedback {
+            font-size: 2rem;
+            text-align: center;
+            
+            &.hidden {
+                display: none;
+            }
+
+            &.correct-answer {
+                color: #7FBF3F;
+            }
+
+            &.wrong-answer {
+                color: #BF3F3F;
+            }
+        }
+    }
+
+    .check-form {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}

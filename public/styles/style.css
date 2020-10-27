@@ -1,0 +1,101 @@
+/*-------------------------------------------------------
+
+    >>> Breakpoints
+
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+
+    >>> Colors
+
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+
+    >>> Font Families
+
+-------------------------------------------------------*/
+/*-------------------------------------------------------
+
+    >>> Sizes
+
+-------------------------------------------------------*/
+.button {
+  background-image: linear-gradient(to right bottom, #104381, #2586fc, #0d376b);
+  border: none;
+  border-radius: 2px;
+  color: #111;
+  outline: none !important;
+  padding: 1rem 4rem;
+  transition: all 0.5s;
+}
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+form .form-group {
+  width: 100%;
+}
+form .form-group .form-control, form .form-group .form-label {
+  font-size: 2rem;
+}
+form .form-group .form-label {
+  color: #ddd;
+}
+form .form-group .feedback {
+  font-size: 2rem;
+  text-align: center;
+}
+form .form-group .feedback.hidden {
+  display: none;
+}
+form .form-group .feedback.correct-answer {
+  color: #7FBF3F;
+}
+form .form-group .feedback.wrong-answer {
+  color: #BF3F3F;
+}
+form .check-form {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.ip-address {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.ip-address .ip-address-value {
+  font-size: 3.5rem;
+  letter-spacing: 0.25rem;
+  margin-bottom: 2.5rem;
+}
+.ip-address .ip-address-button {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+html {
+  font-size: 10px;
+}
+html body {
+  background-color: #222;
+  font-family: "Jockey One", sans-serif;
+}
+html body h1, html body h2, html body h3, html body h4, html body h5, html body h6 {
+  color: #ddd;
+  text-align: center;
+}
+html body h1 {
+  font-size: 2.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+header {
+  background-color: #111;
+  border-bottom: 0.1rem solid #ddd;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

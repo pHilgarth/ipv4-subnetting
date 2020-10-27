@@ -1,0 +1,15 @@
+.button {
+    background-image: linear-gradient(to right bottom, #104381, #2586fc, #0d376b);
+    border: none;
+    border-radius: 2px;
+    color: #111;
+    outline: none !important;
+    padding: 1rem 4rem;
+    transition: all 0.5s;
+
+    &:hover {
+        //xlarge
+        //transform: scale(1.05);
+        //transition: all .5s;
+    }
+}

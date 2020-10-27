@@ -1,58 +1,156 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
-</template>
-
-<script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
-</script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<div class="form-group">
+        <label for="addressClass" class="form-label">Class:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="addressClass"
+          v-model="userInput.addressClass"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="addressType" class="form-label"
+          >Type (Public or Private):</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="addressType"
+          v-model="userInput.addressType"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="dsnm" class="form-label">Default Subnet Mask:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="dsnm"
+          v-model="userInput.dsnm"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="nsnm" class="form-label">New Subnet Mask:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nsnm"
+          v-model="userInput.nsnm"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="borrowed-bits" class="form-label">Borrowed Bits:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="borrowedBits"
+          v-model="userInput.borrowedBits"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="host-bits" class="form-label">Remaining Host Bits:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="hostBits"
+          v-model="userInput.hostBits"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="network" class="form-label">Network-Address:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="network"
+          v-model="userInput.network"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="first-host" class="form-label">First Host:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstHost"
+          v-model="userInput.firstHost"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="last-host" class="form-label">Last Host:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastHost"
+          v-model="userInput.lastHost"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group">
+        <label for="broadcast" class="form-label">Broadcast-Address:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="broadcast"
+          v-model="userInput.broadcast"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group" v-if="subnetted">
+        <label for="first-subnet" class="form-label">First Subnet:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstSubnet"
+          v-model="userInput.firstSubnet"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group" v-if="subnetted">
+        <label for="next-subnet" class="form-label">Next (Sub)Net:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nextSubnet"
+          v-model="userInput.nextSubnet"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group" v-if="subnetted">
+        <label for="last-subnet" class="form-label">Last Subnet:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastSubnet"
+          v-model="userInput.lastSubnet"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group" v-if="subnetted">
+        <label for="amount-subnets" class="form-label"
+          >Amount of Subnets:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="amountSubnets"
+          v-model="userInput.amountSubnets"
+        />
+        <p class="feedback hidden"></p>
+      </div>
+      <div class="form-group" v-if="subnetted">
+        <label for="amount-hosts" class="form-label"
+          >Amount of Hosts per Subnet:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="amountHosts"
+          v-model="userInput.amountHosts"
+        />
+        <p class="feedback hidden"></p>
+      </div>

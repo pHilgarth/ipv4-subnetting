@@ -1,0 +1,17 @@
+
+.ip-address {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .ip-address-value {
+        font-size: 3.5rem;
+        letter-spacing: .25rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .ip-address-button {
+        font-size: 2rem;
+        margin-bottom: 2.5rem;
+    }
+}
