@@ -5,10 +5,15 @@ form {
     justify-content: center;
 
     .form-group {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 2rem;
         width: 100%;
 
-        .form-control, .form-label {
-            font-size: 2rem;
+        .form-control {
+            margin: 1rem 0;
+            padding: .5rem;
+            width: 100%;
         }
 
         .form-label {
@@ -35,6 +40,6 @@ form {
 
     .check-form {
         font-size: 2rem;
-        margin-bottom: 2.5rem;
+        margin: 2.5rem;
     }
 }

@@ -27,16 +27,22 @@
   padding: 1rem 4rem;
   transition: all 0.5s;
 }
+
 form {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 form .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 2rem;
   width: 100%;
 }
-form .form-group .form-control, form .form-group .form-label {
-  font-size: 2rem;
+form .form-group .form-control {
+  margin: 1rem 0;
+  padding: .5rem;
+  width: 100%;
 }
 form .form-group .form-label {
   color: #ddd;
@@ -56,7 +62,7 @@ form .form-group .feedback.wrong-answer {
 }
 form .check-form {
   font-size: 2rem;
-  margin-bottom: 2.5rem;
+  margin: 2.5rem;
 }
 
 .ip-address {
@@ -66,7 +72,7 @@ form .check-form {
 }
 .ip-address .ip-address-value {
   font-size: 3.5rem;
-  letter-spacing: 0.25rem;
+  letter-spacing: .25rem;
   margin-bottom: 2.5rem;
 }
 .ip-address .ip-address-button {
@@ -87,7 +93,7 @@ html body h1, html body h2, html body h3, html body h4, html body h5, html body 
 }
 html body h1 {
   font-size: 2.5rem;
-  letter-spacing: 0.5rem;
+  letter-spacing: .5rem;
   text-transform: uppercase;
 }
 

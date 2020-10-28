@@ -1,8 +1,6 @@
 <template>
   <section class="questions">
-    <h2 :class="{ testing: !subnetted }">
-      subnetted-{{ subnetted }}---answers-{{ answers }}
-    </h2>
+    <h2>{{ userInput.dsnm }}</h2>
     <form>
       <form-group
         v-for="field in requiredFormFields"
@@ -11,7 +9,7 @@
         :text="field.text"
         @emit-value="updateValue"
       ></form-group>
-      <button class="check-form button" @click="checkAnswers($event)">
+      <button class="check-form button" @click.prevent="checkAnswers($event)">
         Check
       </button>
     </form>
@@ -26,18 +24,7 @@ export default {
     FormGroup,
   },
 
-  beforeCreate() {
-    console.log("beforeCreated");
-  },
-
-  created() {
-    console.log("created");
-  },
-  beforeMount() {
-    console.log("beforeMount");
-  },
   mounted() {
-    console.log("mounted");
     if (this.subnetted) {
       this.requiredFormFields = this.allFormFields;
     } else {
@@ -46,12 +33,8 @@ export default {
       );
     }
   },
-  beforeUpdate() {
-    console.log("beforeUpdate");
-  },
-  updated() {
-    console.log("updated");
 
+  updated() {
     if (this.subnetted) {
       this.requiredFormFields = this.allFormFields;
     } else {
@@ -59,14 +42,6 @@ export default {
         (field) => field.showIfNotSubnetted
       );
     }
-    
-    
-  },
-  beforeUnmount() {
-    console.log("beforeUnmount");
-  },
-  unmounted() {
-    console.log("unmounted");
   },
 
   data() {
@@ -154,7 +129,7 @@ export default {
       userInput: {
         addressClass: "",
         addressType: "",
-        dsnm: "",
+        dsnm: "initial",
         nsnm: "",
         borrowedBits: "",
         hostBits: "",
@@ -177,21 +152,9 @@ export default {
     },
   },
 
-  //   updated() {
-  //       if (this.subnetted) {
-  //           this.requiredFormFields = this.formFields;
-  //       }
-  //       else {
-  //           this.requiredFormFields = this.allFormFields.filter(field => field.showIfNotSubnetted);
-  //       }
-  //   },
-
   props: {
     answers: Object,
-    subnetted: {
-        type: Boolean,
-        required: true
-    }
+    subnetted: Boolean
   },
 };
 </script>

@@ -1,16 +1,18 @@
 
 <template>
   <section class="app-container">
+    <h1>IPv4-Adressierung und -Subnetting</h1>
     <main class="container">
-      <p style="color: red; font-size: 1.5rem">
+      <p style="color: red; font-size: 1.5rem;">
         Macbook-Test - If an address wasn't subnetted - what's the first and next subnet?
         Here's an error - first subnet is calculated wrong run some tests again
         for special ip addresses (not subnetted, subnetted from 8 to 16 or 24
         ....)
       </p>
-      <p style="color: red; font-size: 3rem">
-        I use plain JS in "checkAnswers()"! Not good!!!
+      <p style="color: red; font-size:1.5rem">
+        replace plain js in checkAnwers()
       </p>
+      <p style="color: red; font-size:1.5rem">error when non-subnetted addres is generated (recursive call? )</p>
 
       <the-address @address-generated="activateForm"></the-address>
       <question-form v-if="formVisible" :answers="answers" :subnetted="subnetted"></question-form>
